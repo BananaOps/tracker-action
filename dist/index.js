@@ -7,13 +7,15 @@ try {
     //
     const context = github.context;
     // input defined in action metadata file
-    const host = core.getInput('host');
+    let host = core.getInput('host');
     const lockEnable = core.getInput('lock-enable');
     const trackerService = core.getInput('service');
     console.log(`lock is enable ${lockEnable}`);
     console.log(`tracker host ${host}`);
     console.log(`tracker service ${trackerService}`);
-    context.payload.head_commit.message;
+    // ensure http shceme is present
+    host = ensureHttpScheme(host);
+    //context.payload.head_commit.message;
     postToAPI(host, context.payload);
     // Get the JSON webhook payload for the event that triggered the workflow
     //const payload = JSON.stringify(github.context.payload, undefined, 2)
@@ -39,11 +41,19 @@ async function postToAPI(host, payload) {
         }
     };
     try {
-        const response = await axios.post("http://tracker.mon.dev.pl-waw.internal.scaleway.com/api/v1alpha1/event", body);
+        const response = await axios.post(host + "/api/v1alpha1/event", body);
         console.log('Réponse de l\'API :', response.data);
     }
     catch (error) {
         console.error('Erreur lors de la requête POST :', error);
+        core.setFailed(error);
     }
+}
+function ensureHttpScheme(url) {
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        // If scheme is not present, add it as HTTP by default
+        return 'http://' + url;
+    }
+    return url;
 }
 //# sourceMappingURL=index.js.map

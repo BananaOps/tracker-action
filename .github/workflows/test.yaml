@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   test_job:
@@ -12,7 +12,7 @@ jobs:
         uses: ./
         with:
           lock-enable: false
-          host: "tracker.mon.dev.pl-waw.internal.scaleway.com"
+          host: "192.168.64.1:8080" #local IP
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
