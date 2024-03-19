@@ -7,35 +7,37 @@ try {
     //
     const context = github.context;
     // input defined in action metadata file
-    const host = core.getInput('host');
+    let host = core.getInput('host');
     const lockEnable = core.getInput('lock-enable');
     const trackerService = core.getInput('service');
     console.log(`lock is enable ${lockEnable}`);
     console.log(`tracker host ${host}`);
     console.log(`tracker service ${trackerService}`);
-    context.payload.head_commit.message;
-    postToAPI(host);
+    // ensure http shceme is present
+    host = ensureHttpScheme(host);
+    //context.payload.head_commit.message;
+    postToAPI(host, context.payload);
     // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    //const payload = JSON.stringify(github.context.payload, undefined, 2)
+    //console.log(`The event payload: ${payload}`);
 }
 catch (error) {
     core.setFailed(error.message);
 }
-async function postToAPI(host) {
+async function postToAPI(host, payload) {
     const body = {
         title: "Deployment service lambda",
         attributes: {
-            message: "deployment service version v0.0.1",
+            message: payload.head_commit.message,
             source: "github_action",
             type: 1,
             priority: 1,
             relatedId: "",
-            service: "service-event",
+            service: payload.repository.name,
             status: 1
         },
         links: {
-            pullRequestLink: "https://github.com/bananaops/events-tracker/pull/240"
+            pullRequestLink: payload.repository.pulls_url,
         }
     };
     try {
@@ -44,6 +46,14 @@ async function postToAPI(host) {
     }
     catch (error) {
         console.error('Erreur lors de la requête POST :', error);
+        core.setFailed(error);
     }
+}
+function ensureHttpScheme(url) {
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        // If scheme is not present, add it as HTTP by default
+        return 'http://' + url;
+    }
+    return url;
 }
 //# sourceMappingURL=index.js.map

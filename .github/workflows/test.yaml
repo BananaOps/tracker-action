@@ -1,0 +1,18 @@
+on: [pull_request]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: Test on push tracker-action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Test Tracker Action without lock
+        id: tracker
+        uses: ./
+        with:
+          lock-enable: false
+          host: "192.168.64.1:8080" #local IP
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
