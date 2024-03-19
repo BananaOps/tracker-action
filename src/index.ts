@@ -45,7 +45,7 @@ async function postToAPI(host:string, payload:any) {
   };
 
   try {
-    const response = await axios.post("https://tracker.mon.dev.pl-waw.internal.scaleway.com/api/v1alpha1/event", body);
+    const response = await axios.post("http://tracker.mon.dev.pl-waw.internal.scaleway.com/api/v1alpha1/event", body);
     console.log('Réponse de l\'API :', response.data);
   } catch (error) {
     console.error('Erreur lors de la requête POST :', error);
