@@ -1,0 +1,18 @@
+name: 'tracker-action'
+description: 'Action for tracker solution to create event and lock in CD'
+inputs:
+  host:  # tracker host
+    description: 'tracker host'
+    required: true
+  lock-enable:  # feature lock is enable
+    description: 'feature lock is enable'
+    required: false
+  service:  # name of service in traker
+    description: 'name of service in tracker'
+    required: false
+outputs:
+  id: # id of output
+    description: 'tracker event id'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
