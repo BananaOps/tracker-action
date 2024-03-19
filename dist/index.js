@@ -14,32 +14,32 @@ try {
     console.log(`tracker host ${host}`);
     console.log(`tracker service ${trackerService}`);
     context.payload.head_commit.message;
-    postToAPI(host);
+    postToAPI(host, context.payload);
     // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    //const payload = JSON.stringify(github.context.payload, undefined, 2)
+    //console.log(`The event payload: ${payload}`);
 }
 catch (error) {
     core.setFailed(error.message);
 }
-async function postToAPI(host) {
+async function postToAPI(host, payload) {
     const body = {
         title: "Deployment service lambda",
         attributes: {
-            message: "deployment service version v0.0.1",
+            message: payload.head_commit.message,
             source: "github_action",
             type: 1,
             priority: 1,
             relatedId: "",
-            service: "service-event",
+            service: payload.repository.name,
             status: 1
         },
         links: {
-            pullRequestLink: "https://github.com/bananaops/events-tracker/pull/240"
+            pullRequestLink: payload.repository.pulls_url,
         }
     };
     try {
-        const response = await axios.post(host + "/api/v1alpha1/event", body);
+        const response = await axios.post("https://tracker.mon.dev.pl-waw.internal.scaleway.com/api/v1alpha1/event", body);
         console.log('Réponse de l\'API :', response.data);
     }
     catch (error) {
