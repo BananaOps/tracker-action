@@ -1,7 +1,32 @@
 {
-    "after": "066bcc0e74eaa868d5cd401f6660270283bd1c80",
+  "token": "***",
+  "job": "dump_contexts_to_log",
+  "ref": "refs/heads/main",
+  "sha": "d991a3abf3605ce903e0faabc92d79c0072990c0",
+  "repository": "BananaOps/tracker-action",
+  "repository_owner": "BananaOps",
+  "repository_owner_id": "158186689",
+  "repositoryUrl": "git://github.com/BananaOps/tracker-action.git",
+  "run_id": "8344991680",
+  "run_number": "2",
+  "retention_days": "90",
+  "run_attempt": "1",
+  "artifact_cache_size_limit": "10",
+  "repository_visibility": "public",
+  "repo-self-hosted-runners-disabled": false,
+  "enterprise-managed-business-id": "",
+  "repository_id": "774315530",
+  "actor_id": "78090694",
+  "actor": "jplanckeel",
+  "triggering_actor": "jplanckeel",
+  "workflow": "Context testing",
+  "head_ref": "",
+  "base_ref": "",
+  "event_name": "push",
+  "event": {
+    "after": "d991a3abf3605ce903e0faabc92d79c0072990c0",
     "base_ref": null,
-    "before": "bd9cdd4aa2d831fb7f6b629fad2f8c37d524a736",
+    "before": "40747fa3e8010dd90596843697f10da4da2f4c03",
     "commits": [
       {
         "author": {
@@ -14,35 +39,161 @@
           "name": "Jeremy PLANCKEEL",
           "username": "jplanckeel"
         },
-        "distinct": true,
+        "distinct": false,
+        "id": "bd9cdd4aa2d831fb7f6b629fad2f8c37d524a736",
+        "message": "ci: create workflow test\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T11:40:58+01:00",
+        "tree_id": "200887f05b477c208dfc6097655e3749fef48b80",
+        "url": "https://github.com/BananaOps/tracker-action/commit/bd9cdd4aa2d831fb7f6b629fad2f8c37d524a736"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
         "id": "066bcc0e74eaa868d5cd401f6660270283bd1c80",
         "message": "fix: add checkout step\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
         "timestamp": "2024-03-19T11:42:32+01:00",
         "tree_id": "dfcbd57f2aadecb405a1ed6365084dda8b60fac5",
         "url": "https://github.com/BananaOps/tracker-action/commit/066bcc0e74eaa868d5cd401f6660270283bd1c80"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
+        "id": "82121367749b5145cb630b8c1b0367525574934f",
+        "message": "fix: remove node_module folder\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T11:56:39+01:00",
+        "tree_id": "a95af96ca59719259fa6aa699577e4c907b40f2a",
+        "url": "https://github.com/BananaOps/tracker-action/commit/82121367749b5145cb630b8c1b0367525574934f"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
+        "id": "75e411883db680cdfa5d8747b04013e5d67cbf55",
+        "message": "fix: npm install axios\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T11:59:39+01:00",
+        "tree_id": "4a25a66a5fe5d11244ec3932effe80ce5bbabd7f",
+        "url": "https://github.com/BananaOps/tracker-action/commit/75e411883db680cdfa5d8747b04013e5d67cbf55"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
+        "id": "6c88fe987fbc4947fbda895df3105345bb042568",
+        "message": "fix: test without https\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T14:42:51+01:00",
+        "tree_id": "df8db1c4a9006d229c854e26cc468c59e53263eb",
+        "url": "https://github.com/BananaOps/tracker-action/commit/6c88fe987fbc4947fbda895df3105345bb042568"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
+        "id": "5c4b906aa1ca058aacb60a64a0731341c202d07c",
+        "message": "fix: run tsc\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T14:43:03+01:00",
+        "tree_id": "c3e819521455c5fc2e070d2abb8142d59bd0e38c",
+        "url": "https://github.com/BananaOps/tracker-action/commit/5c4b906aa1ca058aacb60a64a0731341c202d07c"
+      },
+      {
+        "author": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "jeremy.planckeel@outlook.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "distinct": false,
+        "id": "a4caa3cb8de1edca72dd9897e63336c7c0c8ca27",
+        "message": "fix: test\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
+        "timestamp": "2024-03-19T15:36:59+01:00",
+        "tree_id": "65cfb9bc9d1545bb234ddf555391cf69e23b6b17",
+        "url": "https://github.com/BananaOps/tracker-action/commit/a4caa3cb8de1edca72dd9897e63336c7c0c8ca27"
+      },
+      {
+        "author": {
+          "email": "78090694+jplanckeel@users.noreply.github.com",
+          "name": "Jeremy PLANCKEEL",
+          "username": "jplanckeel"
+        },
+        "committer": {
+          "email": "noreply@github.com",
+          "name": "GitHub",
+          "username": "web-flow"
+        },
+        "distinct": true,
+        "id": "d991a3abf3605ce903e0faabc92d79c0072990c0",
+        "message": "Merge pull request #2 from BananaOps/ci-create-wf-test\n\nci: create wf test",
+        "timestamp": "2024-03-19T15:39:02+01:00",
+        "tree_id": "65cfb9bc9d1545bb234ddf555391cf69e23b6b17",
+        "url": "https://github.com/BananaOps/tracker-action/commit/d991a3abf3605ce903e0faabc92d79c0072990c0"
       }
     ],
-    "compare": "https://github.com/BananaOps/tracker-action/compare/bd9cdd4aa2d8...066bcc0e74ea",
+    "compare": "https://github.com/BananaOps/tracker-action/compare/40747fa3e801...d991a3abf360",
     "created": false,
     "deleted": false,
     "forced": false,
     "head_commit": {
       "author": {
-        "email": "jeremy.planckeel@outlook.com",
+        "email": "78090694+jplanckeel@users.noreply.github.com",
         "name": "Jeremy PLANCKEEL",
         "username": "jplanckeel"
       },
       "committer": {
-        "email": "jeremy.planckeel@outlook.com",
-        "name": "Jeremy PLANCKEEL",
-        "username": "jplanckeel"
+        "email": "noreply@github.com",
+        "name": "GitHub",
+        "username": "web-flow"
       },
       "distinct": true,
-      "id": "066bcc0e74eaa868d5cd401f6660270283bd1c80",
-      "message": "fix: add checkout step\n\nSigned-off-by: Jeremy PLANCKEEL <jeremy.planckeel@outlook.com>",
-      "timestamp": "2024-03-19T11:42:32+01:00",
-      "tree_id": "dfcbd57f2aadecb405a1ed6365084dda8b60fac5",
-      "url": "https://github.com/BananaOps/tracker-action/commit/066bcc0e74eaa868d5cd401f6660270283bd1c80"
+      "id": "d991a3abf3605ce903e0faabc92d79c0072990c0",
+      "message": "Merge pull request #2 from BananaOps/ci-create-wf-test\n\nci: create wf test",
+      "timestamp": "2024-03-19T15:39:02+01:00",
+      "tree_id": "65cfb9bc9d1545bb234ddf555391cf69e23b6b17",
+      "url": "https://github.com/BananaOps/tracker-action/commit/d991a3abf3605ce903e0faabc92d79c0072990c0"
     },
     "organization": {
       "avatar_url": "https://avatars.githubusercontent.com/u/158186689?v=4",
@@ -62,7 +213,7 @@
       "email": "78090694+jplanckeel@users.noreply.github.com",
       "name": "jplanckeel"
     },
-    "ref": "refs/heads/ci-create-wf-test",
+    "ref": "refs/heads/main",
     "repository": {
       "allow_forking": true,
       "archive_url": "https://api.github.com/repos/BananaOps/tracker-action/{archive_format}{/ref}",
@@ -153,9 +304,9 @@
       },
       "private": false,
       "pulls_url": "https://api.github.com/repos/BananaOps/tracker-action/pulls{/number}",
-      "pushed_at": 1710844937,
+      "pushed_at": 1710859142,
       "releases_url": "https://api.github.com/repos/BananaOps/tracker-action/releases{/id}",
-      "size": 0,
+      "size": 1621,
       "ssh_url": "git@github.com:BananaOps/tracker-action.git",
       "stargazers": 0,
       "stargazers_count": 0,
@@ -195,4 +346,16 @@
       "type": "User",
       "url": "https://api.github.com/users/jplanckeel"
     }
+  },
+  "server_url": "https://github.com",
+  "api_url": "https://api.github.com",
+  "graphql_url": "https://api.github.com/graphql",
+  "ref_name": "main",
+  "ref_protected": false,
+  "ref_type": "branch",
+  "secret_source": "Actions",
+  "workflow_ref": "BananaOps/tracker-action/.github/workflows/dump.yaml@refs/heads/main",
+  "workflow_sha": "d991a3abf3605ce903e0faabc92d79c0072990c0",
+  "workspace": "/home/runner/work/tracker-action/tracker-action",
+  "action": "__run"
 }
