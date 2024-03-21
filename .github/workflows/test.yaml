@@ -3,16 +3,27 @@ on: [pull_request]
 jobs:
   test_job:
     runs-on: ubuntu-latest
-    name: Test on push tracker-action
+    name: Test tracker-action
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Test Tracker Action without lock
+      - name: Start Event in Tracker Action without lock
         id: tracker
         uses: ./
         with:
+          lock_enable: false
+          tracker_host: "192.168.64.1:8080" #local IP
+          status: "start"
+          related_id: ${{ steps.tracker.outputs.id }} #for get id if job failed
+
+      # Use the output from the `tracker` step
+      - name: Get the output id
+        run: echo "The event id was ${{ steps.tracker.outputs.id }}"
+
+      - name: Success Event in Tracker Action without lock
+        uses: ./
+        with:
           lock-enable: false
-          host: "192.168.64.1:8080" #local IP
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          tracker_host: "192.168.64.1:8080" #local IP
+          related_id: ${{ steps.tracker.outputs.id }}
+          status: "success"

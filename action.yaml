@@ -1,18 +1,38 @@
 name: 'tracker-action'
 description: 'Action for tracker solution to create event and lock in CD'
 inputs:
-  host:  # tracker host
+  tracker_host:  # tracker host
     description: 'tracker host'
     required: true
-  lock-enable:  # feature lock is enable
+  lock_enable:  # feature lock is enable
     description: 'feature lock is enable'
+    required: false
+  title:  # title in traker
+    description: 'title in tracker'
+    required: false
+  message:  # message in traker
+    description: 'message in tracker'
     required: false
   service:  # name of service in traker
     description: 'name of service in tracker'
     required: false
+  priority:  # priority in traker
+    description: 'priority in tracker'
+    required: false
+    default: "P4"
+  status:  # status in traker
+    description: 'status in tracker'
+    required: false
+  related_id:  # related_id for event in traker
+    description: 'related_id for event in traker'
+    required: false
+  github_token:  # name of service in traker
+    description: 'name of service in tracker'
+    required: true
 outputs:
   id: # id of output
     description: 'tracker event id'
 runs:
   using: 'node20'
   main: 'dist/index.js'
+  post: 'dist/post.js'
