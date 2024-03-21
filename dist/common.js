@@ -39,8 +39,8 @@ async function runCommands(post) {
         }
         // set event.title if null
         if (event.title === "") {
-            event.title = payload.job + " on " + payload.event.repository.name;
-            console.warn("set default title: " + payload.job + " on " + payload.event.repository.name);
+            event.title = payload.job + " on " + payload.repository.name;
+            console.warn("set default title: " + payload.job + " on " + payload.repository.name);
         }
         // set event.message = event.title if null
         if (event.message === "") {
@@ -101,9 +101,9 @@ async function getMergedPullRequest(githubToken, owner, repo, sha) {
 }
 // func to post event on tracker api
 async function postToAPI(host, payload, event, pull) {
+    // check if pull is not null
     let pullRequestLink = "";
     if (pull !== null) {
-        console.log(pull.html_url);
         pullRequestLink = pull.html_url;
     }
     const body = {
@@ -114,7 +114,7 @@ async function postToAPI(host, payload, event, pull) {
             type: 1,
             priority: event.priority,
             relatedId: event.relatedId,
-            service: payload.event.repository.name,
+            service: payload.repository.name,
             status: event.status
         },
         links: {
