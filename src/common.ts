@@ -60,8 +60,8 @@ async function runCommands(post: boolean) {
 
         // set event.title if null
         if (event.title === "") {
-            event.title = payload.job + " on " + payload.event.repository.name
-            console.warn("set default title: " + payload.job + " on " + payload.event.repository.name)
+            event.title = payload.job + " on " + payload.repository.name
+            console.warn("set default title: " + payload.job + " on " + payload.repository.name)
             
         }
 
@@ -168,7 +168,7 @@ async function postToAPI(host: string, payload: any, event: Event, pull: any) {
             type: 1,
             priority: event.priority,
             relatedId: event.relatedId,
-            service: payload.event.repository.name,
+            service: payload.repository.name,
             status: event.status
         },
         links: {
