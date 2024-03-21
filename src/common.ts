@@ -61,20 +61,20 @@ async function runCommands(post: boolean) {
         // set event.title if null
         if (event.title === "") {
             event.title = payload.job + " on " + payload.repository.name
-            console.warn("set default title: " + payload.job + " on " + payload.repository.name)
+            console.warn("Set default title: " + payload.job + " on " + payload.repository.name)
             
         }
 
         // set event.message = event.title if null
         if (event.message === "") {
             event.message = event.title
-            console.warn("set default message: " + event.title)
+            console.warn("Set default message: " + event.title)
             
         }
 
         // add debug log
-        console.debug(`lock is enable ${lockEnable}`);
-        console.debug(`tracker host ${host}`);
+        console.debug(`Lock is enable ${lockEnable}`);
+        console.debug(`Tracker host ${host}`);
 
         const githubToken = core.getInput('github_token');
         let pull: any = null
@@ -89,7 +89,7 @@ async function runCommands(post: boolean) {
         }
 
         if (pull === null && githubToken !== "") {
-            console.debug('pull request not found');
+            console.debug('Pull request not found');
         }
 
         // ensure http scheme is present
@@ -114,7 +114,7 @@ async function getJobStatus(): Promise<string> {
     // get job context status
     const jobStatus = context.job.status;
 
-    console.debug('job status:', jobStatus);
+    console.debug('Job status:', jobStatus);
     return jobStatus
 }
 
@@ -178,10 +178,10 @@ async function postToAPI(host: string, payload: any, event: Event, pull: any) {
 
     try {
         const response = await axios.post(host + "/api/v1alpha1/event", body);
-        console.log('tracker response:', response.data);
+        console.log('Tracker response:', response.data);
         core.setOutput('id', response.data.event.metadata.id)
     } catch (error: any) {
-        console.error('Erreur lors de la requête POST :', error);
+        console.error('Error to POST event:', error);
         core.setFailed(error);
     }
 }
